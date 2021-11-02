@@ -1,0 +1,88 @@
+<app-codheader></app-codheader>
+<h1 *ngIf='response == false'>Create Your Loadout!!!!</h1>
+<div class="d-flex w-100 justify-content-center mt-5">
+    <button id="generate-btn" (click)="onGenerate()" class="btn btn-dark text-uppercase fw-bold">Generate</button>
+</div>
+<div *ngIf='response' class="w-100 d-flex justify-content-center mt-5"> 
+    <div class="d-flex flex-column justify-content-center h-100 align-items-around">
+        <div class="d-flex align-items-center justify-content-center mb-5 m-0 p-0">
+            <div *ngIf='attachOne' class="d-flex p-0 mr-4">
+                <ul *ngIf="weaponTwoAttachments != ''" class="attachList d-flex flex-column align-items-start p-0 m-0">
+                    <li class="d-flex">{{weaponOneAttachments[0].AttachmentTypeName}}:<span class="text-center w-100">{{weaponOneAttachments[0].AttachmentName}}</span></li>
+                    <hr class="seperator">
+                    <li class="d-flex">{{weaponOneAttachments[1].AttachmentTypeName}}:<span class="text-center w-100">{{weaponOneAttachments[1].AttachmentName}}</span></li>
+                </ul>
+            </div>
+            <div id="weaponOne" class="weaponname d-flex flex-column justify-content-center align-items-center">
+                <img [src]='weaponOneImg' class="weapon-IMG position-absolute m-0 p-0">
+                <p>{{weaponOneImg}}</p>
+                <h5 class="m-0">{{weaponOne.WeaponClass}}</h5>
+                <p class="m-0">{{weaponOne.WeaponName}}</p>
+            </div>
+            <div *ngIf='attachOne' class="d-flex m-0 p-0">
+                <ul *ngIf="weaponTwoAttachments != ''" class="attachList d-flex flex-column align-items-end p-0 m-0">
+                    <li class="d-flex">{{weaponOneAttachments[2].AttachmentTypeName}}:<span class="text-center w-100">{{weaponOneAttachments[2].AttachmentName}}</span></li>
+                    <hr class="seperator">
+                    <li class="d-flex">{{weaponOneAttachments[3].AttachmentTypeName}}:<span class="text-center w-100">{{weaponOneAttachments[3].AttachmentName}}</span></li>
+                    <hr class="seperator">
+                    <li class="d-flex">{{weaponOneAttachments[4].AttachmentTypeName}}:<span class="text-center w-100">{{weaponOneAttachments[4].AttachmentName}}</span></li>
+                </ul>
+            </div>
+        </div>
+        <div class="d-flex align-items-center">
+            <div *ngIf='attachTwo' class="d-flex m-0">
+                <ul class="attachList d-flex flex-column align-items-start p-0 m-0">
+                    <li class="d-flex">{{weaponTwoAttachments[0].AttachmentTypeName}}:<span class="text-center w-100">{{weaponTwoAttachments[0].AttachmentName}}</span></li>
+                    <hr class="seperator">
+                    <li class="d-flex">{{weaponTwoAttachments[1].AttachmentTypeName}}:<span class="text-center w-100">{{weaponTwoAttachments[1].AttachmentName}}</span></li>
+                </ul>
+            </div>
+            <div id="weaponTwo" class="weaponname d-flex flex-column justify-content-center align-items-center m-auto ml-4 mr-4">
+                <img [src]='weaponTwoImg' class="weapon-IMG position-absolute m-0 p-0">
+                <h5 class="m-0">{{weaponTwo.WeaponClass}}</h5>
+                <p class="m-0">{{weaponTwo.WeaponName}}</p>
+            </div>
+            <div *ngIf='attachTwo' class="d-flex m-0">
+                <ul class="attachList d-flex flex-column align-items-end p-0 m-0">
+                    <li class="d-flex">{{weaponTwoAttachments[2].AttachmentTypeName}}:<span class="text-center w-100">{{weaponTwoAttachments[2].AttachmentName}}</span></li>
+                    <hr class="seperator">
+                    <li class="d-flex">{{weaponTwoAttachments[3].AttachmentTypeName}}:<span class="text-center w-100">{{weaponTwoAttachments[3].AttachmentName}}</span></li>
+                    <hr class="seperator">
+                    <li class="d-flex">{{weaponTwoAttachments[4].AttachmentTypeName}}:<span class="text-center w-100">{{weaponTwoAttachments[4].AttachmentName}}</span></li>
+                </ul>
+            </div>
+        </div>
+        <div class="d-flex align-items-center justify-content-around text-center mt-5">
+            <div class="d-flex flex-column h-100 justify-content-center">
+                <h5 class="m-0">Perk 1</h5>
+                <hr class="m-0 p-0">
+                <p>{{perkOne.PerkOneName}}</p>
+                <img src="../../assets/images/Amped.JPG" class="position-absolute m-0 p-0">
+            </div>
+            <div class="d-flex flex-column h-100 justify-content-center">
+                <h5 class="m-0">Perk 2</h5>
+                <hr class="m-0 p-0">
+                <p>{{perkTwo.PerkTwoName}}</p>
+            </div>
+            <div class="d-flex flex-column h-100 justify-content-center">
+                <h5 class="m-0">Perk 3</h5>
+                <hr class="m-0 p-0">
+                <p>{{perkThree.PerkThreeName}}</p>
+            </div>
+        </div>
+        <div class="w-100 d-flex justify-content-around text-center mt-5">
+            <div class="d-flex flex-column h-100 w-50 justify-content-center">
+                <h5 class="m-0">Lethal</h5>
+                <hr class="equipsep m-auto p-0">
+                <p>{{lethal.LethalName}}</p>
+            </div>
+            <div class="d-flex flex-column h-100 w-50 justify-content-center">
+                <h5 class="m-0">Tactical</h5>
+                <hr class="equipsep m-auto p-0">
+                <p>{{tactical.TacticalName}}</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
